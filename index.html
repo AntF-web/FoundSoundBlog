@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta id="metaDescription" name="description" content="A trilingual independent music blog for sounds, scenes, records and stories found across the web." />
+  <meta name="theme-color" content="#151515" />
+  <title>Found / Sound</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Libre+Franklin:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Found Sound home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        FOUND / SOUND
+      </a>
+
+      <div class="header-actions">
+        <nav class="nav" aria-label="Primary navigation">
+          <a id="navStories" href="#stories">Stories</a>
+          <a id="navAbout" href="#about">About</a>
+        </nav>
+
+        <div id="languageSwitcher" class="language-switcher" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+          <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-kicker">
+        <p id="heroEyebrow" class="eyebrow">Independent music notes</p>
+        <span class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      </div>
+      <h1 id="heroTitle">Sounds worth<br>passing on.</h1>
+      <p id="heroCopy" class="hero-copy">Records, scenes, mixes, artists and musical rabbit holes found online — retold, contextualised and linked back to the original source.</p>
+      <div class="hero-tape" aria-hidden="true">
+        <span>PLAY</span><span>●</span><span>REC</span><span>////</span><span>45 / 33</span><span>STEREO</span>
+      </div>
+    </section>
+
+    <section id="filtersSection" class="filters shell" aria-label="Music filters">
+      <div class="search-wrap">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search music stories..." aria-label="Search music stories" />
+      </div>
+      <div id="tagFilters" class="tag-filters"></div>
+    </section>
+
+    <section id="stories" class="stories shell" aria-live="polite"></section>
+
+    <section id="about" class="about shell">
+      <div>
+        <p id="aboutEyebrow" class="eyebrow">About this blog</p>
+        <h2 id="aboutTitle">A listening notebook, not an algorithm.</h2>
+      </div>
+      <p id="aboutCopy">A personal selection of music and the stories around it. Each entry is a short retelling or reflection, with credit and links to the original journalism, artist, label, mix or archive.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span>© <span id="year"></span> FOUND / SOUND</span>
+      <span id="footerText">Independent notes for curious ears.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
