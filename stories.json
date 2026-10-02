@@ -45,6 +45,39 @@
     }
   },
   "stories": [
+
+{
+  "date": "2026-10-02",
+  "artist": "Kwinten Crauwels",
+  "location": "",
+  "source": "Website",
+  "url": "https://musicmap.info/",
+  "listenUrl": "",
+  "imageUrl": "https://antf-web.github.io/images/Musicmap The Genealogy and History of Popular Music Genres.png",
+  "videoUrl": "",
+  "tags": [
+    "music",
+    "map"
+  ],
+  "translations": {
+    "en": {
+      "title": "Musicmap",
+      "summary": "The Genealogy and History of Popular Music Genres from Origin till Present (1870-201..)",
+      "note": ""
+    },
+    "es": {
+      "title": "Musicmap",
+      "summary": "Genealogía e historia de los géneros de la música popular: desde los orígenes hasta la actualidad (1870-201...)",
+      "note": ""
+    },
+    "fr": {
+      "title": "Musicmap",
+      "summary": "La Généalogie et l'Histoire des Genres de la Musique Populaire des Origines au Présent (1870-201...)",
+      "note": ""
+    }
+  }
+},
+      
     {
       "date": "2026-10-02",
       "artist": "Red Ant",
