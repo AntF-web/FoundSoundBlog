@@ -1,3 +1,6 @@
+
+    
+  
 {
   "tags": {
     "introduction": {
@@ -34,9 +37,44 @@
       "en": "grime",
       "es": "grime",
       "fr": "grime"
+    },
+    "music": {
+      "en": "music",
+      "es": "music",
+      "fr": "music"
     }
   },
   "stories": [
+    {
+      "date": "2026-10-02",
+      "artist": "Red Ant",
+      "location": "Brussels",
+      "source": "Website",
+      "url": "https://antf-web.github.io/MusicStory/",
+      "listenUrl": "",
+      "imageUrl": "https://antf-web.github.io/MusicStory/images/Social_Preview_OK.png",
+      "videoUrl": "",
+      "tags": [
+        "music"
+      ],
+      "translations": {
+        "en": {
+          "title": "Music Story",
+          "summary": "Not a history of music. A life through music — records, pirate frequencies, television shocks, bass pressure, breakbeats and images that never left.",
+          "note": ""
+        },
+        "es": {
+          "title": "Music Story",
+          "summary": "No es una historia de la música. Es una vida a través de la música: discos, emisoras pirata, impactos televisivos, frecuencias graves, *breakbeats* e imágenes que han quedado grabadas para siempre en mi memoria.",
+          "note": ""
+        },
+        "fr": {
+          "title": "Music Story",
+          "summary": "Pas une histoire de la musique. Une vie à travers la musique — disques, radios pirates, chocs télévisuels, fréquences basses, breakbeats et images qui sont à jamais gravées dans ma mémoire.",
+          "note": ""
+        }
+      }
+    },
     {
       "date": "2026-10-01",
       "artist": "Red Ant",
@@ -74,45 +112,5 @@
       }
     }
   ]
-},
-{
-  "tags": {
-    "music": {
-      "en": "music",
-      "es": "music",
-      "fr": "music"
-    }
-  },
-  "stories": [
-    {
-      "date": "2026-10-02",
-      "artist": "Red Ant",
-      "location": "Brussels",
-      "source": "Website",
-      "url": "https://antf-web.github.io/MusicStory/",
-      "listenUrl": "",
-      "imageUrl": "https://antf-web.github.io/MusicStory/images/Social_Preview_OK.png",
-      "videoUrl": "",
-      "tags": [
-        "music"
-      ],
-      "translations": {
-        "en": {
-          "title": "Music Story",
-          "summary": "Not a history of music. A life through music — records, pirate frequencies, television shocks, bass pressure, breakbeats and images that never left.",
-          "note": ""
-        },
-        "es": {
-          "title": "Music Story",
-          "summary": "No es una historia de la música. Es una vida a través de la música: discos, emisoras pirata, impactos televisivos, frecuencias graves, *breakbeats* e imágenes que han quedado grabadas para siempre en mi memoria.",
-          "note": ""
-        },
-        "fr": {
-          "title": "Music Story",
-          "summary": "Pas une histoire de la musique. Une vie à travers la musique — disques, radios pirates, chocs télévisuels, fréquences basses, breakbeats et images qui sont à jamais gravées dans ma mémoire.",
-          "note": ""
-        }
-      }
-    }
-  ]
 }
+
