@@ -1,5 +1,82 @@
 {
   "tags": {
+    "introduction": {
+      "en": "introduction",
+      "es": "introduction",
+      "fr": "introduction"
+    },
+    "ukgarage": {
+      "en": "ukgarage",
+      "es": "ukgarage",
+      "fr": "ukgarage"
+    },
+    "ukfunky": {
+      "en": "ukfunky",
+      "es": "ukfunky",
+      "fr": "ukfunky"
+    },
+    "speedgarage": {
+      "en": "speedgarage",
+      "es": "speedgarage",
+      "fr": "speedgarage"
+    },
+    "dub": {
+      "en": "dub",
+      "es": "dub",
+      "fr": "dub"
+    },
+    "bassmusic": {
+      "en": "bassmusic",
+      "es": "bassmusic",
+      "fr": "bassmusic"
+    },
+    "grime": {
+      "en": "grime",
+      "es": "grime",
+      "fr": "grime"
+    }
+  },
+  "stories": [
+    {
+      "date": "2026-10-01",
+      "artist": "Red Ant",
+      "location": "Brussels",
+      "source": "Perso",
+      "url": "https://antf-web.github.io/MusicStory/",
+      "listenUrl": "https://www.mixcloud.com/RedAnt/",
+      "imageUrl": "https://antf-web.github.io/images/RedAnt.jpg",
+      "videoUrl": "https://www.youtube.com/@redant3136",
+      "tags": [
+        "introduction",
+        "ukgarage",
+        "ukfunky",
+        "speedgarage",
+        "dub",
+        "bassmusic",
+        "grime"
+      ],
+      "translations": {
+        "en": {
+          "title": "Introduction - My Music History",
+          "summary": "First post to introduce myself.  Musician, DJ, artivist, digger,...\nThis blog is intended to share my wanderings on the internet, the vibrations in my headphones and the thoughts coming from my mind.",
+          "note": ""
+        },
+        "es": {
+          "title": "Introducción - Presentación - Mi historia a través de la música",
+          "summary": "Músico, DJ, artivista, buscador de música...\nEste blog tiene como objetivo compartir mis recorridos por internet, las vibraciones de mis auriculares y los pensamientos que surgen de mi mente.",
+          "note": ""
+        },
+        "fr": {
+          "title": "Intro - Présentation - Mon histoire en musique",
+          "summary": "Musicien, DJ, « artiviste », chineur...\nCe blog a pour vocation de partager mes pérégrinations sur Internet, les vibrations dans mon casque et les pensées qui traversent mon esprit.",
+          "note": ""
+        }
+      }
+    }
+  ]
+}
+{
+  "tags": {
     "music": {
       "en": "music",
       "es": "music",
