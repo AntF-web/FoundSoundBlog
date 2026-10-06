@@ -1,6 +1,3 @@
-
-    
-  
 {
   "tags": {
     "introduction": {
@@ -45,39 +42,184 @@
     }
   },
   "stories": [
-
-{
-  "date": "2026-10-02",
-  "artist": "Kwinten Crauwels",
-  "location": "",
-  "source": "Website",
-  "url": "https://musicmap.info/",
-  "listenUrl": "",
-  "imageUrl": "https://antf-web.github.io/images/Musicmap The Genealogy and History of Popular Music Genres.png",
-  "videoUrl": "",
-  "tags": [
-    "music",
-    "map"
-  ],
-  "translations": {
-    "en": {
-      "title": "Musicmap",
-      "summary": "The Genealogy and History of Popular Music Genres from Origin till Present (1870-201..)",
-      "note": ""
+    {
+      "id": "2026-10-06-youtube-music-channels",
+      "date": "2026-10-06",
+      "artist": "Multi",
+      "location": "WWW",
+      "source": "Web",
+      "url": "",
+      "listenUrl": "",
+      "imageUrl": "media/YT_MUSIC.jpg",
+      "videoUrl": "",
+      "tags": [
+        "ukgarage",
+        "ukfunky",
+        "speedgarage",
+        "dub",
+        "bassmusic",
+        "grime",
+        "music"
+      ],
+      "translations": {
+        "en": {
+          "title": "YouTube Music Channels",
+          "summary": "Some YouTube music channels worth a listen. New releases updated daily in UK Bass Music (all genres).",
+          "note": ""
+        },
+        "es": {
+          "title": "YouTube Music Channels",
+          "summary": "Algunos canales de música en YouTube que vale la pena escuchar. Novedades actualizadas a diario en UK Bass Music (todos los géneros).",
+          "note": ""
+        },
+        "fr": {
+          "title": "YouTube Music Channels",
+          "summary": "Quelques chaînes musicales YouTube qui valent le détour. Nouveautés mises à jour quotidiennement dans le domaine de la UK Bass Music (tous genres confondus).",
+          "note": ""
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "translations": {
+            "en": "YouTube music channels with all the new releases in electronic/Bass Music (UK Garage, UK Bass Music, Grime,...)\n\n@SWL2TON\nFROM SHEFFIELD WITH LOVE\n2 TON HEAVY\n\nUK Bass, UKG, Grime,...",
+            "fr": "@SWL2TON\nFROM SHEFFIELD WITH LOVE\n2 TON HEAVY",
+            "es": "@SWL2TON\nFROM SHEFFIELD WITH LOVE\n2 TON HEAVY"
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/SWL2TON.jpg",
+          "size": "small",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "link",
+          "url": "https://www.youtube.com/@SWL2TON",
+          "labels": {
+            "en": "SWL2TON",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "@BlueDollarBillz\n\nUK Garage, Speed Garage, UKG,...",
+            "fr": "@BlueDollarBillz",
+            "es": "@BlueDollarBillz"
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/BlueDollarBillz - YouTube.png",
+          "size": "small",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "link",
+          "url": "https://www.youtube.com/@BlueDollarBillz",
+          "labels": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "@Pinkbloc\n\nUK Bass, Electronic Music, Techno, House,...",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/Pinkbloc_banner.jpg",
+          "size": "large",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "link",
+          "url": "https://www.youtube.com/@pinkbloc",
+          "labels": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "@GarageVybez98\n\nOld School, Classics UK Garage",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/GarageVybez98 - YouTube.png",
+          "size": "small",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "link",
+          "url": "https://www.youtube.com/@GarageVybez98",
+          "labels": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        }
+      ]
     },
-    "es": {
-      "title": "Musicmap",
-      "summary": "Genealogía e historia de los géneros de la música popular: desde los orígenes hasta la actualidad (1870-201...)",
-      "note": ""
+    {
+      "date": "2026-10-02",
+      "artist": "Kwinten Crauwels",
+      "location": "",
+      "source": "Website",
+      "url": "https://musicmap.info/",
+      "listenUrl": "",
+      "imageUrl": "https://antf-web.github.io/images/Musicmap The Genealogy and History of Popular Music Genres.png",
+      "videoUrl": "",
+      "tags": [
+        "music",
+        "map"
+      ],
+      "translations": {
+        "en": {
+          "title": "Musicmap",
+          "summary": "The Genealogy and History of Popular Music Genres from Origin till Present (1870-201..)",
+          "note": ""
+        },
+        "es": {
+          "title": "Musicmap",
+          "summary": "Genealogía e historia de los géneros de la música popular: desde los orígenes hasta la actualidad (1870-201...)",
+          "note": ""
+        },
+        "fr": {
+          "title": "Musicmap",
+          "summary": "La Généalogie et l'Histoire des Genres de la Musique Populaire des Origines au Présent (1870-201...)",
+          "note": ""
+        }
+      }
     },
-    "fr": {
-      "title": "Musicmap",
-      "summary": "La Généalogie et l'Histoire des Genres de la Musique Populaire des Origines au Présent (1870-201...)",
-      "note": ""
-    }
-  }
-},
-      
     {
       "date": "2026-10-02",
       "artist": "Red Ant",
@@ -146,4 +288,3 @@
     }
   ]
 }
-
