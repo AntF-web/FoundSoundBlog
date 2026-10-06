@@ -186,6 +186,60 @@
             "fr": "",
             "es": ""
           }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "@GarageHouseTV\n\nGarage House TV delivers a daily selection of tracks released in the 21st century, no matter what the medium, be it vinyl or digital.",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/Garage House TV - YouTube.png",
+          "size": "small",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "link",
+          "url": "https://www.youtube.com/@GarageHouseTV",
+          "labels": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "@FromTheEndz\n\nOur mission is simple: to dig deep into the UK influenced underground music scene and share the very best it has to offer with the world.",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/From The Endz - YouTube.png",
+          "size": "small",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "link",
+          "url": "https://www.youtube.com/@FromTheEndz",
+          "labels": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
         }
       ]
     },
