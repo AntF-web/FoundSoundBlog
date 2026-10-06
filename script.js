@@ -240,7 +240,7 @@ languageSwitcher.addEventListener('click', event => {
 searchInput.addEventListener('input', renderStories);
 
 updateStaticText();
-fetch('stories.json', { cache: 'no-store' })
+fetch(`stories.json?ts=${Date.now()}`, { cache: 'no-store' })
   .then(response => { if (!response.ok) throw new Error('Could not load stories.json'); return response.json(); })
   .then(data => {
     tagLabels = data.tags || {};

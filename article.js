@@ -162,7 +162,7 @@ languageSwitcher.addEventListener('click', event => {
 });
 
 const requestedId = new URLSearchParams(location.search).get('id');
-fetch('stories.json', { cache: 'no-store' })
+fetch(`stories.json?ts=${Date.now()}`, { cache: 'no-store' })
   .then(response => { if (!response.ok) throw new Error('stories'); return response.json(); })
   .then(data => {
     tagLabels = data.tags || {};
