@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta id="metaDescription" name="description" content="Found / Sound article" />
+  <meta name="theme-color" content="#151515" />
+  <title>Article — Found / Sound</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Libre+Franklin:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="article-shell header-inner">
+      <a class="brand" href="index.html"><span class="brand-dot" aria-hidden="true"></span>FOUND / SOUND</a>
+      <div class="header-actions">
+        <a id="backLink" class="article-back" href="index.html">← All stories</a>
+        <div id="languageSwitcher" class="language-switcher" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+          <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="articleRoot" class="article-shell article-page" aria-live="polite"></main>
+  <footer class="site-footer">
+    <div class="article-shell footer-inner"><span>© <span id="year"></span> FOUND / SOUND</span><span id="footerText">Independent notes for curious ears.</span></div>
+  </footer>
+  <script src="article.js"></script>
+</body>
+</html>
