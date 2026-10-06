@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FOUND / SOUND</title>
+    <link>https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/</link>
+    <description>Independent music notes, stories and discoveries.</description>
+    <language>en</language>
+    <atom:link href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Music Story</title>
+      <link>https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/article.html?id=2026-10-02-music-story</link>
+      <guid isPermaLink="true">https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/article.html?id=2026-10-02-music-story</guid>
+      <pubDate>Fri, 02 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Not a history of music. A life through music — records, pirate frequencies, television shocks, bass pressure, breakbeats and images that never left.</description>\n      <category>music</category>
+    </item>
+    <item>
+      <title>Introduction - My Music History</title>
+      <link>https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/article.html?id=2026-10-01-introduction-my-music-history</link>
+      <guid isPermaLink="true">https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/article.html?id=2026-10-01-introduction-my-music-history</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <description>First post to introduce myself.  Musician, DJ, artivist, digger,...
+This blog is intended to share my wanderings on the internet, the vibrations in my headphones and the thoughts coming from my mind.</description>\n      <category>introduction</category>
+      <category>ukgarage</category>
+      <category>ukfunky</category>
+      <category>speedgarage</category>
+      <category>dub</category>
+      <category>bassmusic</category>
+      <category>grime</category>
+    </item>
+  </channel>
+</rss>

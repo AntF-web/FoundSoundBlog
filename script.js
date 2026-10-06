@@ -4,6 +4,11 @@ const tagFilters = document.querySelector('#tagFilters');
 const yearEl = document.querySelector('#year');
 const languageSwitcher = document.querySelector('#languageSwitcher');
 const metaDescription = document.querySelector('#metaDescription');
+const brevoFormWrap = document.querySelector('#brevoFormWrap');
+const brevoFormFrame = document.querySelector('#brevoFormFrame');
+const newsletterComingSoon = document.querySelector('#newsletterComingSoon');
+const subscribeMessage = document.querySelector('#subscribeMessage');
+const publicConfig = window.FOUND_SOUND_CONFIG || {};
 
 const supportedLanguages = ['en', 'es', 'fr'];
 const dateLocales = { en: 'en-GB', es: 'es-ES', fr: 'fr-FR' };
@@ -12,11 +17,12 @@ const ui = {
   en: {
     pageTitle: 'Found / Sound — Independent Music Notes',
     description: 'A trilingual independent music blog for sounds, scenes, records and stories found across the web.',
-    navStories: 'Stories', navAbout: 'About', navAria: 'Primary navigation', languageAria: 'Language',
+    navStories: 'Stories', navSubscribe: 'Subscribe', navAbout: 'About', navAria: 'Primary navigation', languageAria: 'Language',
     heroEyebrow: 'Independent music notes', heroTitle: 'Sounds worth<br>passing on.',
     heroCopy: 'Records, scenes, mixes, artists and musical rabbit holes found online — retold, contextualised and linked back to the original source.',
     filtersAria: 'Music filters', searchPlaceholder: 'Search music stories...', searchAria: 'Search music stories',
     all: 'All', noStories: 'No music stories found.', readArticle: 'Read article →', readOriginal: 'Read source ↗', listen: 'Listen ↗',
+    subscribeEyebrow: 'Stay in the loop', subscribeTitle: 'New sounds, straight to you.', subscribeCopy: 'Subscribe by email for new posts, or follow the RSS feed in your favourite reader.', subscribeEmailLabel: 'Email address', subscribeButton: 'Subscribe', subscribeComingSoon: 'Email newsletter coming soon.', rss: 'RSS feed ↗', subscribePrivacy: 'No algorithm. Unsubscribe anytime.', subscribeSetupError: 'Email signup is not configured yet.',
     aboutEyebrow: 'About this blog', aboutTitle: 'A listening notebook, not an algorithm.',
     aboutCopy: 'A personal selection of music and the stories around it. Each entry can be a short note or a complete article with text, images and video, while keeping credit and links to the original source.',
     footer: 'Independent notes for curious ears.',
@@ -25,11 +31,12 @@ const ui = {
   es: {
     pageTitle: 'Found / Sound — Notas de música independiente',
     description: 'Un blog musical independiente y trilingüe sobre sonidos, escenas, discos e historias encontradas en la web.',
-    navStories: 'Historias', navAbout: 'Acerca de', navAria: 'Navegación principal', languageAria: 'Idioma',
+    navStories: 'Historias', navSubscribe: 'Suscribirse', navAbout: 'Acerca de', navAria: 'Navegación principal', languageAria: 'Idioma',
     heroEyebrow: 'Notas de música independiente', heroTitle: 'Sonidos que vale la pena<br>compartir.',
     heroCopy: 'Discos, escenas, sesiones, artistas y caminos musicales encontrados en internet — recontados, contextualizados y enlazados a la fuente original.',
     filtersAria: 'Filtros musicales', searchPlaceholder: 'Buscar historias musicales...', searchAria: 'Buscar historias musicales',
     all: 'Todo', noStories: 'No se encontraron historias musicales.', readArticle: 'Leer artículo →', readOriginal: 'Leer fuente ↗', listen: 'Escuchar ↗',
+    subscribeEyebrow: 'Mantente al día', subscribeTitle: 'Nuevos sonidos, directamente para ti.', subscribeCopy: 'Suscríbete por correo para recibir nuevas publicaciones o sigue el feed RSS en tu lector favorito.', subscribeEmailLabel: 'Correo electrónico', subscribeButton: 'Suscribirse', subscribeComingSoon: 'Newsletter por correo próximamente.', rss: 'Feed RSS ↗', subscribePrivacy: 'Sin algoritmo. Puedes darte de baja cuando quieras.', subscribeSetupError: 'La suscripción por correo todavía no está configurada.',
     aboutEyebrow: 'Acerca de este blog', aboutTitle: 'Un cuaderno de escucha, no un algoritmo.',
     aboutCopy: 'Una selección personal de música y de las historias que la rodean. Cada entrada puede ser una nota breve o un artículo completo con texto, imágenes y vídeo, manteniendo los créditos y enlaces a la fuente original.',
     footer: 'Notas independientes para oídos curiosos.',
@@ -38,11 +45,12 @@ const ui = {
   fr: {
     pageTitle: 'Found / Sound — Notes de musique indépendante',
     description: 'Un blog musical indépendant et trilingue consacré aux sons, scènes, disques et histoires trouvés sur le web.',
-    navStories: 'Histoires', navAbout: 'À propos', navAria: 'Navigation principale', languageAria: 'Langue',
+    navStories: 'Histoires', navSubscribe: 'S’abonner', navAbout: 'À propos', navAria: 'Navigation principale', languageAria: 'Langue',
     heroEyebrow: 'Notes de musique indépendante', heroTitle: 'Des sons qui méritent<br>de circuler.',
     heroCopy: 'Disques, scènes, mixes, artistes et détours musicaux découverts en ligne — racontés, contextualisés et reliés à leur source originale.',
     filtersAria: 'Filtres musicaux', searchPlaceholder: 'Rechercher des histoires musicales...', searchAria: 'Rechercher des histoires musicales',
     all: 'Tout', noStories: 'Aucune histoire musicale trouvée.', readArticle: 'Lire l’article →', readOriginal: 'Lire la source ↗', listen: 'Écouter ↗',
+    subscribeEyebrow: 'Rester au courant', subscribeTitle: 'De nouveaux sons, directement chez vous.', subscribeCopy: 'Abonnez-vous par e-mail pour recevoir les nouveaux articles, ou suivez le flux RSS dans votre lecteur préféré.', subscribeEmailLabel: 'Adresse e-mail', subscribeButton: 'S’abonner', subscribeComingSoon: 'Newsletter par e-mail bientôt disponible.', rss: 'Flux RSS ↗', subscribePrivacy: 'Pas d’algorithme. Désinscription à tout moment.', subscribeSetupError: 'L’abonnement par e-mail n’est pas encore configuré.',
     aboutEyebrow: 'À propos de ce blog', aboutTitle: 'Un carnet d’écoute, pas un algorithme.',
     aboutCopy: 'Une sélection personnelle de musique et des histoires qui l’entourent. Chaque entrée peut être une note courte ou un article complet avec texte, images et vidéo, tout en conservant les crédits et les liens vers la source originale.',
     footer: 'Notes indépendantes pour oreilles curieuses.',
@@ -137,6 +145,7 @@ function updateStaticText() {
   document.title = t.pageTitle;
   metaDescription.setAttribute('content', t.description);
   document.querySelector('#navStories').textContent = t.navStories;
+  document.querySelector('#navSubscribe').textContent = t.navSubscribe;
   document.querySelector('#navAbout').textContent = t.navAbout;
   document.querySelector('.nav').setAttribute('aria-label', t.navAria);
   languageSwitcher.setAttribute('aria-label', t.languageAria);
@@ -146,6 +155,12 @@ function updateStaticText() {
   document.querySelector('#filtersSection').setAttribute('aria-label', t.filtersAria);
   searchInput.placeholder = t.searchPlaceholder;
   searchInput.setAttribute('aria-label', t.searchAria);
+  document.querySelector('#subscribeEyebrow').textContent = t.subscribeEyebrow;
+  document.querySelector('#subscribeTitle').textContent = t.subscribeTitle;
+  document.querySelector('#subscribeCopy').textContent = t.subscribeCopy;
+  document.querySelector('#newsletterComingSoon').textContent = t.subscribeComingSoon;
+  document.querySelector('#rssLink').textContent = t.rss;
+  document.querySelector('#subscribePrivacy').textContent = t.subscribePrivacy;
   document.querySelector('#aboutEyebrow').textContent = t.aboutEyebrow;
   document.querySelector('#aboutTitle').textContent = t.aboutTitle;
   document.querySelector('#aboutCopy').textContent = t.aboutCopy;
@@ -155,6 +170,44 @@ function updateStaticText() {
     button.classList.toggle('active', isActive);
     button.setAttribute('aria-pressed', String(isActive));
   });
+}
+
+
+function normalizeBrevoUrl(value) {
+  const raw = String(value || '').trim();
+  if (!raw || /YOUR-BREVO/i.test(raw)) return '';
+  try {
+    const url = new URL(raw, window.location.href);
+    if (!/^https?:$/.test(url.protocol)) return '';
+    return url.href;
+  } catch {
+    return '';
+  }
+}
+
+function brevoFormUrl() {
+  const localized = publicConfig.brevoFormUrls && typeof publicConfig.brevoFormUrls === 'object'
+    ? publicConfig.brevoFormUrls[currentLanguage]
+    : '';
+  return normalizeBrevoUrl(localized || publicConfig.brevoFormUrl);
+}
+
+function configureSubscription() {
+  const url = brevoFormUrl();
+  if (!brevoFormWrap || !brevoFormFrame || !newsletterComingSoon) return;
+
+  if (url) {
+    const height = Number(publicConfig.brevoFormHeight);
+    brevoFormFrame.style.height = `${Number.isFinite(height) && height >= 240 ? height : 560}px`;
+    if (brevoFormFrame.src !== url) brevoFormFrame.src = url;
+    brevoFormWrap.hidden = false;
+    newsletterComingSoon.hidden = true;
+    if (subscribeMessage) subscribeMessage.textContent = '';
+  } else {
+    brevoFormWrap.hidden = true;
+    brevoFormFrame.removeAttribute('src');
+    newsletterComingSoon.hidden = false;
+  }
 }
 
 function renderFilters() {
@@ -229,6 +282,7 @@ function setLanguage(language) {
   currentLanguage = language;
   localStorage.setItem('foundSoundLanguage', language);
   updateStaticText();
+  configureSubscription();
   renderFilters();
   renderStories();
 }
@@ -240,6 +294,7 @@ languageSwitcher.addEventListener('click', event => {
 searchInput.addEventListener('input', renderStories);
 
 updateStaticText();
+configureSubscription();
 fetch(`stories.json?ts=${Date.now()}`, { cache: 'no-store' })
   .then(response => { if (!response.ok) throw new Error('Could not load stories.json'); return response.json(); })
   .then(data => {

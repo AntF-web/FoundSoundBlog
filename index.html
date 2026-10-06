@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Libre+Franklin:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261006-onlinefix2" />
+  <link rel="stylesheet" href="styles.css?v=20261006-brevo1" />
+  <link rel="alternate" type="application/rss+xml" title="FOUND / SOUND RSS" href="feed.xml" />
 </head>
 <body>
   <header class="site-header">
@@ -21,6 +22,7 @@
       <div class="header-actions">
         <nav class="nav" aria-label="Primary navigation">
           <a id="navStories" href="#stories">Stories</a>
+          <a id="navSubscribe" href="#subscribe">Subscribe</a>
           <a id="navAbout" href="#about">About</a>
         </nav>
         <div id="languageSwitcher" class="language-switcher" aria-label="Language">
@@ -55,6 +57,26 @@
 
     <section id="stories" class="stories shell" aria-live="polite"></section>
 
+
+    <section id="subscribe" class="subscribe shell">
+      <div class="subscribe-intro">
+        <p id="subscribeEyebrow" class="eyebrow">Stay in the loop</p>
+        <h2 id="subscribeTitle">New sounds, straight to you.</h2>
+        <p id="subscribeCopy">Subscribe by email for new posts, or follow the RSS feed in your favourite reader.</p>
+      </div>
+      <div class="subscribe-card">
+        <div id="brevoFormWrap" class="brevo-form-wrap" hidden>
+          <iframe id="brevoFormFrame" class="brevo-form-frame" title="Newsletter subscription form" loading="lazy" scrolling="auto"></iframe>
+        </div>
+        <p id="newsletterComingSoon" class="subscribe-unconfigured">Email newsletter coming soon.</p>
+        <div class="subscribe-secondary">
+          <a id="rssLink" class="rss-link" href="feed.xml" type="application/rss+xml">RSS feed ↗</a>
+          <span id="subscribePrivacy">No algorithm. Unsubscribe anytime.</span>
+        </div>
+        <p id="subscribeMessage" class="subscribe-message" aria-live="polite"></p>
+      </div>
+    </section>
+
     <section id="about" class="about shell">
       <div>
         <p id="aboutEyebrow" class="eyebrow">About this blog</p>
@@ -70,6 +92,7 @@
       <span id="footerText">Independent notes for curious ears.</span>
     </div>
   </footer>
-  <script src="script.js?v=20261006-onlinefix2"></script>
+  <script src="site-config.js?v=20261006-brevo1"></script>
+  <script src="script.js?v=20261006-brevo1"></script>
 </body>
 </html>

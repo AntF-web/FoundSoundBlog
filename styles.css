@@ -217,3 +217,77 @@ button, input { border-radius: 0; }
 .article-link-block a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; border: 1px solid var(--ink); color: var(--ink); background: var(--paper); text-decoration: none; font: 600 .82rem/1.35 "DM Mono", monospace; text-transform: uppercase; letter-spacing: .02em; }
 .article-link-block a:hover { background: var(--orange); }
 .article-link-block a:focus-visible, .article-inline-link:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+
+/* Subscribe / newsletter */
+.subscribe {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 70px;
+  padding: 82px 0;
+  border-top: 1px solid var(--line);
+}
+.subscribe h2 {
+  margin: 0;
+  max-width: 720px;
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  line-height: .92;
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+}
+.subscribe-intro > p:last-child { max-width: 620px; margin: 24px 0 0; font-size: 1.05rem; }
+.subscribe-card {
+  align-self: center;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.brevo-form-wrap { width: 100%; overflow: hidden; background: var(--paper); }
+.brevo-form-frame { display: block; width: 100%; min-height: 320px; border: 0; background: var(--paper); }
+.subscribe-form label {
+  display: block;
+  margin: 0 0 8px;
+  font: 500 .7rem/1.4 "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.subscribe-form-row { display: grid; grid-template-columns: minmax(0,1fr) auto; }
+.subscribe-form input {
+  min-width: 0;
+  border: 1px solid var(--ink);
+  border-right: 0;
+  background: var(--bg);
+  color: var(--ink);
+  padding: 13px 14px;
+  font: 400 .9rem "Libre Franklin", Arial, sans-serif;
+  outline: none;
+}
+.subscribe-form input:focus { box-shadow: inset 0 0 0 3px var(--acid); }
+.subscribe-form button {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--acid);
+  padding: 13px 17px;
+  cursor: pointer;
+  font: 500 .72rem "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.subscribe-form button:hover { background: var(--orange); color: var(--ink); }
+.subscribe-unconfigured { margin: 0; padding: 13px 14px; border: 1px dashed var(--line); color: var(--muted); font: 400 .8rem/1.5 "DM Mono", monospace; text-transform: uppercase; }
+.subscribe-secondary { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #b4b0a5; }
+.rss-link { font: 500 .75rem "DM Mono", monospace; text-transform: uppercase; }
+.rss-link:hover { color: var(--orange); }
+.subscribe-secondary span { color: var(--muted); font: 400 .66rem/1.4 "DM Mono", monospace; text-align: right; text-transform: uppercase; }
+.subscribe-message { min-height: 1.2em; margin: 11px 0 0; color: var(--orange); font: 400 .72rem/1.4 "DM Mono", monospace; }
+@media (max-width: 850px) { .subscribe { grid-template-columns: 1fr; gap: 26px; } }
+@media (max-width: 520px) {
+  .subscribe { padding: 62px 0; }
+  .subscribe-card { padding: 16px; box-shadow: 5px 5px 0 var(--ink); }
+  .subscribe-form-row { grid-template-columns: 1fr; gap: 8px; }
+  .subscribe-form input { border-right: 1px solid var(--ink); }
+  .subscribe-secondary { align-items: flex-start; flex-direction: column; }
+  .subscribe-secondary span { text-align: left; }
+}
