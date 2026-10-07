@@ -98,7 +98,7 @@ button, input { border-radius: 0; }
 .story-identity { margin-top: 12px; color: var(--ink); }
 .story h2 { margin: 0 0 16px; max-width: 820px; font-size: clamp(2rem, 4.6vw, 4rem); letter-spacing: -.055em; line-height: .95; }
 .story-media { margin: 0 0 22px; }
-.story-image-wrap { overflow: hidden; border: 1px solid var(--line); background: var(--paper); }
+.story-image-wrap { overflow: hidden; border: 1px solid var(--line); background: transparent; }
 .story-image { display: block; width: 100%; max-height: 620px; object-fit: cover; aspect-ratio: 16 / 9; }
 .story-video-wrap {
   position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden;
@@ -181,13 +181,13 @@ button, input { border-radius: 0; }
 .article-deck { max-width: 780px; margin: 28px 0 0; font-size: clamp(1.12rem, 2vw, 1.42rem); line-height: 1.5; }
 .article-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 24px; }
 .article-featured { margin: 38px 0 0; }
-.article-featured img { display: block; width: 100%; max-height: 680px; aspect-ratio: 16/9; object-fit: cover; border: 1px solid var(--line); }
+.article-featured img { display: block; width: 100%; max-height: 680px; aspect-ratio: 16/9; object-fit: contain; background: transparent; border: 1px solid var(--line); }
 .article-body { width: min(100%, 780px); margin: 54px auto 0; }
 .article-text { margin: 0 0 30px; font-size: 1.08rem; line-height: 1.78; }
 .article-text p { margin: 0 0 1.25em; }
 .article-text p:last-child { margin-bottom: 0; }
 .article-media { margin: 46px 0; }
-.article-media img { display: block; width: 100%; max-height: 760px; object-fit: contain; background: var(--paper); border: 1px solid var(--line); }
+.article-media img { display: block; width: 100%; max-height: 760px; object-fit: contain; background: transparent; border: 1px solid var(--line); }
 .article-media--small { width: 45%; margin-left: auto; margin-right: auto; }
 .article-media--medium { width: 70%; margin-left: auto; margin-right: auto; }
 .article-media--large { width: 100%; }
@@ -290,4 +290,30 @@ button, input { border-radius: 0; }
   .subscribe-form input { border-right: 1px solid var(--ink); }
   .subscribe-secondary { align-items: flex-start; flex-direction: column; }
   .subscribe-secondary span { text-align: left; }
+}
+
+
+/* PDF + booklet article blocks */
+.article-document { margin: 48px 0; }
+.article-pdf-frame { height: var(--pdf-height, 720px); border: 1px solid var(--line); background: var(--paper); }
+.article-pdf-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.article-document-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.article-booklet { margin: 52px 0; }
+.booklet-caption { font: 500 .8rem "DM Mono", monospace; color: var(--muted); margin: 0 0 14px; }
+.booklet-page { margin: 0; }
+.booklet-page img { display: block; width: 100%; max-height: 84vh; object-fit: contain; border: 1px solid var(--line); background: transparent; }
+.booklet-page > a { display: block; }
+.article-booklet--vertical .booklet-pages { display: grid; gap: 36px; }
+.article-booklet--grid .booklet-pages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.article-booklet--grid .booklet-page img { max-height: none; }
+.article-booklet--slideshow .booklet-page { display: none; }
+.article-booklet--slideshow .booklet-page.is-active { display: block; }
+.booklet-controls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; margin-top: 14px; }
+.booklet-controls button { border: 1px solid var(--line); background: var(--ink); color: var(--paper); padding: 10px 12px; cursor: pointer; font: 500 .72rem "DM Mono", monospace; text-transform: uppercase; letter-spacing: .04em; }
+.booklet-controls button:last-child { justify-self: end; }
+.booklet-controls span { font: 500 .72rem "DM Mono", monospace; }
+@media (max-width: 650px) {
+  .article-pdf-frame { height: min(72vh, 620px); }
+  .article-booklet--grid .booklet-pages { grid-template-columns: 1fr; }
+  .booklet-controls { grid-template-columns: auto 1fr auto; }
 }

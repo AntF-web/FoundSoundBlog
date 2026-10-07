@@ -8,9 +8,9 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 const supportedLanguages = ['en', 'es', 'fr'];
 const dateLocales = { en: 'en-GB', es: 'es-ES', fr: 'fr-FR' };
 const labels = {
-  en: { back: '← All stories', source: 'Read source ↗', listen: 'Listen ↗', video: 'Open video ↗', footer: 'Independent notes for curious ears.', missing: 'Article not found.' },
-  es: { back: '← Todas las historias', source: 'Leer fuente ↗', listen: 'Escuchar ↗', video: 'Abrir vídeo ↗', footer: 'Notas independientes para oídos curiosos.', missing: 'Artículo no encontrado.' },
-  fr: { back: '← Toutes les histoires', source: 'Lire la source ↗', listen: 'Écouter ↗', video: 'Ouvrir la vidéo ↗', footer: 'Notes indépendantes pour oreilles curieuses.', missing: 'Article introuvable.' }
+  en: { back: '← All stories', source: 'Read source ↗', listen: 'Listen ↗', video: 'Open video ↗', pdfOpen: 'Open PDF ↗', pdfDownload: 'Download PDF', bookletPrev: '← Previous', bookletNext: 'Next →', page: 'Page', footer: 'Independent notes for curious ears.', missing: 'Article not found.' },
+  es: { back: '← Todas las historias', source: 'Leer fuente ↗', listen: 'Escuchar ↗', video: 'Abrir vídeo ↗', pdfOpen: 'Abrir PDF ↗', pdfDownload: 'Descargar PDF', bookletPrev: '← Anterior', bookletNext: 'Siguiente →', page: 'Página', footer: 'Notas independientes para oídos curiosos.', missing: 'Artículo no encontrado.' },
+  fr: { back: '← Toutes les histoires', source: 'Lire la source ↗', listen: 'Écouter ↗', video: 'Ouvrir la vidéo ↗', pdfOpen: 'Ouvrir le PDF ↗', pdfDownload: 'Télécharger le PDF', bookletPrev: '← Précédente', bookletNext: 'Suivante →', page: 'Page', footer: 'Notes indépendantes pour oreilles curieuses.', missing: 'Article introuvable.' }
 };
 
 let story = null;
@@ -117,6 +117,28 @@ function renderBlock(block, contentTitle) {
     const label = block.labels?.[currentLanguage] || block.labels?.en || href;
     return `<aside class="article-link-block"><a href="${escapeHTML(href)}"${articleLinkAttrs(href)}><span>${escapeHTML(label)}</span><span aria-hidden="true">↗</span></a></aside>`;
   }
+  if (block.type === 'pdf') {
+    const url = safeMediaUrl(block.url || ''); if (!url) return '';
+    const pdfCaption = block.captions?.[currentLanguage] || block.captions?.en || '';
+    const height = Math.min(1100, Math.max(420, Number(block.height) || 720));
+    return `<figure class="article-document">
+      <div class="article-pdf-frame" style="--pdf-height:${height}px"><iframe src="${escapeHTML(url)}#view=FitH" title="${escapeHTML(pdfCaption || contentTitle)}" loading="lazy"></iframe></div>
+      ${pdfCaption ? `<figcaption class="article-caption">${escapeHTML(pdfCaption)}</figcaption>` : ''}
+      <div class="article-document-actions"><a class="action-link" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(labels[currentLanguage].pdfOpen)}</a><a class="action-link" href="${escapeHTML(url)}" download>${escapeHTML(labels[currentLanguage].pdfDownload)}</a></div>
+    </figure>`;
+  }
+  if (block.type === 'booklet') {
+    const validPages = (block.pages || []).map(page => ({ page, url: safeMediaUrl(page.url || '') })).filter(item => item.url);
+    const pages = validPages.map(({ page, url }, pageIndex) => {
+      const pageCaption = page.captions?.[currentLanguage] || page.captions?.en || '';
+      return `<figure class="booklet-page${pageIndex === 0 ? ' is-active' : ''}" data-page="${pageIndex}"><a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer"><img src="${escapeHTML(url)}" alt="${escapeHTML(pageCaption || `${labels[currentLanguage].page} ${pageIndex + 1}`)}" loading="lazy" /></a>${pageCaption ? `<figcaption class="article-caption">${escapeHTML(pageCaption)}</figcaption>` : ''}</figure>`;
+    });
+    if (!pages.length) return '';
+    const display = ['slideshow', 'vertical', 'grid'].includes(block.display) ? block.display : 'slideshow';
+    const bookletCaption = block.captions?.[currentLanguage] || block.captions?.en || '';
+    const controls = display === 'slideshow' && pages.length > 1 ? `<div class="booklet-controls"><button type="button" data-booklet-action="prev">${escapeHTML(labels[currentLanguage].bookletPrev)}</button><span data-booklet-counter>1 / ${pages.length}</span><button type="button" data-booklet-action="next">${escapeHTML(labels[currentLanguage].bookletNext)}</button></div>` : '';
+    return `<section class="article-booklet article-booklet--${display}" data-booklet data-current="0">${bookletCaption ? `<p class="booklet-caption">${escapeHTML(bookletCaption)}</p>` : ''}<div class="booklet-pages">${pages.join('')}</div>${controls}</section>`;
+  }
   return '';
 }
 
@@ -131,7 +153,7 @@ function render() {
   metaDescription.setAttribute('content', content.summary || content.title);
   const identity = [story.artist, story.location].filter(Boolean).join(' · ');
   const featured = safeMediaUrl(story.imageUrl || '');
-  const blocks = (story.content || []).map(block => renderBlock(block, content.title)).join('');
+  const blocks = (story.content || []).map((block, index) => renderBlock(block, content.title, index)).join('');
   const fallbackVideo = !blocks && story.videoUrl ? `<figure class="article-media">${renderVideo(story.videoUrl, content.title)}</figure>` : '';
   root.innerHTML = `
     <article>
@@ -152,6 +174,21 @@ function render() {
       </div>
     </article>`;
 }
+
+root.addEventListener('click', event => {
+  const button = event.target.closest('[data-booklet-action]');
+  if (!button) return;
+  const booklet = button.closest('[data-booklet]');
+  if (!booklet) return;
+  const pages = [...booklet.querySelectorAll('.booklet-page')];
+  if (!pages.length) return;
+  let current = Number(booklet.dataset.current || 0);
+  current = button.dataset.bookletAction === 'next' ? (current + 1) % pages.length : (current - 1 + pages.length) % pages.length;
+  booklet.dataset.current = String(current);
+  pages.forEach((page, index) => page.classList.toggle('is-active', index === current));
+  const counter = booklet.querySelector('[data-booklet-counter]');
+  if (counter) counter.textContent = `${current + 1} / ${pages.length}`;
+});
 
 languageSwitcher.addEventListener('click', event => {
   const button = event.target.closest('button[data-lang]');
