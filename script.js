@@ -247,7 +247,7 @@ function renderStories() {
     const identity = [story.artist, story.location].filter(Boolean).map(escapeHTML).join(' · ');
     const listenUrl = safeUrl(story.listenUrl || '');
     const sourceUrl = safeUrl(story.url || '');
-    const articleUrl = `article.html?id=${encodeURIComponent(getStoryId(story))}`;
+    const articleUrl = `${encodeURIComponent(getStoryId(story))}.html`;
     const number = String(index + 1).padStart(2, '0');
 
     return `

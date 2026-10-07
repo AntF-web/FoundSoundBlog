@@ -198,7 +198,9 @@ languageSwitcher.addEventListener('click', event => {
   render();
 });
 
-const requestedId = new URLSearchParams(location.search).get('id');
+const queryId = new URLSearchParams(location.search).get('id');
+const fileId = decodeURIComponent(location.pathname.split('/').pop() || '').replace(/\.html$/i, '');
+const requestedId = queryId || ((fileId && !['article', 'index', 'editor'].includes(fileId.toLowerCase())) ? fileId : '');
 fetch(`stories.json?ts=${Date.now()}`, { cache: 'no-store' })
   .then(response => { if (!response.ok) throw new Error('stories'); return response.json(); })
   .then(data => {
