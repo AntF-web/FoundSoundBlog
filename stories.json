@@ -39,9 +39,332 @@
       "en": "music",
       "es": "music",
       "fr": "music"
+    },
+    "reggae": {
+      "en": "reggae",
+      "es": "reggae",
+      "fr": "reggae"
+    },
+    "sound-system": {
+      "en": "sound-system",
+      "es": "sound-system",
+      "fr": "sound-system"
+    },
+    "jamaica": {
+      "en": "jamaica",
+      "es": "jamaica",
+      "fr": "jamaica"
     }
   },
   "stories": [
+    {
+      "id": "2026-10-07-sound-system-culture",
+      "date": "2026-10-07",
+      "artist": "Red Ant",
+      "location": "Kingston",
+      "source": "Original",
+      "url": "",
+      "listenUrl": "",
+      "imageUrl": "media/soundsystem/01.jpg",
+      "videoUrl": "",
+      "tags": [
+        "reggae",
+        "sound-system",
+        "jamaica"
+      ],
+      "translations": {
+        "en": {
+          "title": "Sound System Culture",
+          "summary": "From Jamaican yard dances to Dub, Hip-Hop and UK Bass music",
+          "note": ""
+        },
+        "es": {
+          "title": "Cultura Sound System",
+          "summary": "Desde los bailes callejeros jamaicanos hasta el Dub, el Hip-Hop y la música UK Bass.",
+          "note": ""
+        },
+        "fr": {
+          "title": "Culture Sound System",
+          "summary": "Des « yard dances » jamaïcaines au Dub, au Hip-Hop et à la Bass Music made in UK",
+          "note": ""
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "translations": {
+            "en": "What is sound system culture?\n\nSound system culture is much bigger than people with huge speakers playing reggae. \n\nIt is a musical, technological, social and political culture that developed in Jamaica and profoundly shaped reggae, dub, hip-hop, jungle, drum & bass, UK garage, grime, dubstep and modern bass music.\n\nA useful definition is: a way of making, playing and experiencing music in which records, bass, technology, selectors, MCs and the crowd form one collective performance. \n\nReggae is music; a sound system is an institution and a practice built around music.",
+            "fr": "Qu'est-ce que la culture « Sound System » ?\n\nLa culture « Sound System » ne se résume pas à des mecs jouant du reggae sur d'immenses enceintes.\n\nC'est une culture à la fois musicale, technologique, sociale et politique, née en Jamaïque, qui a profondément façonné le Reggae, le Dub, le Hip-Hop, la jungle, la Drum & Bass, le UK garage, le Grime, le Dubstep et la Bass Music moderne.\n\nUne définition utile serait : une manière de créer, de diffuser et de vivre la musique où disques, basses, technologie, selectors, MC et public fusionnent pour former une performance collective.\n\nLe Reggae est une musique ; le « Sound System » est une institution et une pratique construites autour de cette musique.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/02.jpg",
+          "size": "medium",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "Where it began: Jamaica\n\nModern sound system culture emerged in Kingston, Jamaica, during the late 1940s and 1950s. \n\nRecorded music was becoming increasingly important, while many working-class Jamaicans did not have private access to powerful playback equipment and live bands were relatively expensive.\nEntrepreneurs built mobile systems around amplifiers, turntables, generators and large speaker cabinets and organized dances in yards, streets and halls. \nSounds such as Tom the Great Sebastian, Duke Reid's Trojan and Coxsone Dodd's Downbeat became famous. Later, King Tubby's Hometown Hi-Fi became hugely influential.",
+            "fr": "Aux origines : la Jamaïque\n\nLa culture moderne des « Sound Systems » a vu le jour à Kingston, en Jamaïque, à la fin des années 1940 et dans les années 1950.\n\nAlors que la musique enregistrée prenait une importance croissante, de nombreux Jamaïcains issus des classes populaires ne disposaient pas chez eux d'équipements de diffusion puissants, et faire appel à des orchestres en direct représentait un coût relativement élevé.\nDes entrepreneurs ont alors assemblé des systèmes mobiles composés d'amplificateurs, de platines, de générateurs et de grandes enceintes, organisant des soirées dansantes dans des cours, des rues et des salles.\nDes « sound systems » tels que Tom the Great Sebastian, le Trojan de Duke Reid et le Downbeat de Coxsone Dodd ont acquis une grande notoriété. Plus tard, le Hometown Hi-Fi de King Tubby a exercé une influence considérable.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/11.jpg",
+          "size": "small",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/Duke-Reid-Trojan-System.jpeg",
+          "size": "medium",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "The crucial point is that a sound system became a collective identity. People could attend a dance because of the sound itself - its selection, equipment, crew and reputation - rather than because a particular recording artist was appearing.\n\nThe sound itself became an instrument\n\nA conventional hi-fi system aims to reproduce a recording accurately. Jamaican sound systems evolved toward physical impact. \n\nBass was not merely heard; it was felt.\n\nLarge handmade speaker boxes handled different frequency ranges. Bass bins delivered low frequencies while mids and tops carried vocals and percussion. \nOperators shaped the experience through level, EQ, filtering, echo and reverb. \nPlayback equipment therefore became part of the performance. \n\nThis approach would become fundamental to dub.",
+            "fr": "L'essentiel est qu'un sound system est devenu un symbole d'identité collective. On assistait à une soirée dansante pour le son lui-même – sa sélection, son matériel, son équipe et sa réputation – plutôt que pour la présence d'un artiste en particulier.\n\nLe son lui-même est devenu un instrument.\n\nUn système hi-fi classique vise à reproduire fidèlement un enregistrement. Les sound systems jamaïcains, quant à eux, ont évolué vers une expérience sensorielle plus physique.\n\nLes basses n'étaient pas seulement entendues ; elles étaient ressenties.\n\nDe grandes enceintes artisanales géraient différentes gammes de fréquences. Les caissons de basses diffusaient les basses fréquences, tandis que les médiums et les aigus véhiculaient les voix et les percussions.\n\nLes opérateurs façonnaient l'expérience grâce au niveau sonore, à l'égalisation, au filtrage, à l'écho et à la réverbération.\n\nLe matériel de lecture est ainsi devenu partie intégrante du spectacle.\n\nCette approche deviendra fondamentale pour le dub.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/03.jpg",
+          "size": "medium",
+          "captions": {
+            "en": "King Tubby",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "Selector + deejay + engineer + crew\n\nJamaican terminology differs from later American DJ terminology. \nTraditionally, the selector chooses records; the deejay talks or chants over them; the engineer or operator controls the system. Other crew members may handle equipment, promotion, microphones and the practical work of putting on a dance.\n\nSelection is not simply a playlist. The selector reads the crowd and decides what record should happen at a particular moment. The deejay may introduce tunes, shout out neighbourhoods, joke, boast about the sound, comment on events or improvise rhythmically. \n\nThis microphone practice became known as toasting.",
+            "fr": "Selector + deejay + ingénieur du son + équipe\n\nLa terminologie jamaïcaine diffère de celle, apparue plus tard, des DJ américains.\nTraditionnellement, le *selector* choisit les disques, le *deejay* parle ou chante par-dessus, et l'ingénieur (ou opérateur) gère le système de sonorisation. D'autres membres de l'équipe peuvent s'occuper du matériel, de la promotion, des microphones et de la logistique liée à l'organisation de la soirée.\n\nLa sélection ne se résume pas à une simple liste de lecture. Le *selector* observe le public et décide quel disque jouer à un moment précis. Le *deejay* peut présenter les morceaux, saluer différents quartiers, plaisanter, vanter les mérites du système de sonorisation, commenter l'actualité ou improviser en rythme.\n\nCette pratique au micro a pris le nom de « toasting ».",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/URoy.jpg",
+          "size": "medium",
+          "captions": {
+            "en": "U-Roy",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "The microphone becomes an instrument\n\nArtists such as U-Roy, Big Youth and Dennis Alcapone helped turn rhythmic speech over records into a major musical form. Voice, rhythm, crowd response, bass and effects became parts of a single performance.\n\nIt is too simple to say Jamaica 'invented rap', because hip-hop also emerged from African-American musical traditions and the specific social world of the Bronx. But Jamaican sound-system practices became an important part of the exchange through Caribbean migration. Jamaican-born DJ Kool Herc brought experience of Jamaican dance culture into the Bronx environment that helped produce early hip-hop.",
+            "fr": "Le microphone devient un instrument\n\nDes artistes tels que U-Roy, Big Youth et Dennis Alcapone ont contribué à transformer la pratique consistant à parler en rythme sur des disques en une forme musicale majeure. La voix, le rythme, la réaction du public, la basse et les effets sonores ont fini par former un tout indissociable au sein d'une même performance.\n\nIl serait trop simpliste d'affirmer que la Jamaïque a « inventé le Rap », car le Hip-Hop est également issu des traditions musicales afro-américaines et du contexte social spécifique du Bronx. Toutefois, les pratiques des *sound systems* jamaïcains ont joué un rôle important dans ces échanges, favorisés par les migrations caribéennes. DJ Kool Herc, originaire de Jamaïque, a apporté avec lui l'expérience de la culture *Dancehall* de son île natale dans l'environnement du Bronx, contribuant ainsi à l'émergence du Hip-Hop.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/koolherc.jpg",
+          "size": "medium",
+          "captions": {
+            "en": "Kool Herc",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "The Dub Revolution\n\nProducers and engineers discovered that an existing recording could be taken apart and reconstructed. Vocals could disappear, bass and drums could dominate, instruments could enter for seconds and vanish, and echo or reverb could transform fragments of sound.\n\nFigures such as King Tubby and Lee 'Scratch' Perry helped establish this radical approach. The mixing desk effectively became an instrument.\n\nInstead of treating a song as a permanently finished object, dub treated a recording as raw material that could be reconstructed. Modern remix culture, alternate versions, instrumental flips, bass drops, live FX and radical rearrangement all have important precedents in this practice.",
+            "fr": "La révolution du Dub\n\nDes producteurs et des ingénieurs du son ont découvert qu'il était possible de déconstruire et de reconstruire un enregistrement existant. Les voix pouvaient disparaître, la basse et la batterie prendre le dessus, des instruments surgir pour quelques secondes avant de s'évanouir, tandis que l'écho ou la réverbération transformaient des fragments sonores.\n\nDes figures telles que King Tubby et Lee « Scratch » Perry ont contribué à instaurer cette approche radicale. La console de mixage devenait, à proprement parler, un instrument.\n\nPlutôt que de considérer une chanson comme une œuvre figée et achevée, le Dub traitait l'enregistrement comme une matière première susceptible d'être reconstruite. La culture moderne du remix, les versions alternatives, les déclinaisons instrumentales, les « bass drops », les effets en temps réel et les réarrangements radicaux trouvent tous d'importants précédents dans cette pratique.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/05.jpg",
+          "size": "small",
+          "captions": {
+            "en": "Lee 'Scratch' Perry",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/06.jpg",
+          "size": "small",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "Version: one rhythm, many songs\n\nA producer could record a rhythm track and use it as the foundation for many releases. One singer records a vocal, another singer records another, a deejay toasts over it, an instrumental version appears, then a dub version, and somebody else reworks it again.\n\nThe result is less 'artist -> song -> finished recording' than 'rhythm -> ecosystem of recordings'. \n\nDancehall later developed this further through riddim culture.",
+            "fr": "Le concept \"Version\" : un même rythme, plusieurs morceaux\n\nUn producteur peut enregistrer une piste rythmique et s'en servir comme base pour de nombreuses publications. Un chanteur y pose sa voix, un autre en fait de même, un deejay y improvise un toast, une version instrumentale voit le jour, suivie d'une version Dub, avant qu'un autre artiste ne retravaille le tout.\n\nLe résultat ne relève pas tant du schéma « artiste → chanson → enregistrement final » que de celui « rythme → écosystème d'enregistrements ».\n\nLe dancehall a par la suite poussé cette logique encore plus loin grâce à la culture du « riddim ».",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/04.jpg",
+          "size": "small",
+          "captions": {
+            "en": "King Tubby",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "Dubplates: music that belongs to one sound\n\nA dubplate was historically a special acetate disc produced in tiny quantities, sometimes as a unique copy. A sound could possess a version unavailable to competitors.\nSingers and deejays could also record customized lyrics naming and praising a particular sound. A familiar tune could therefore become an exclusive musical weapon. Modern DJs receiving unreleased tracks is partly analogous, but traditional dubplate culture goes further because the recording itself can be customized for the sound system.",
+            "fr": "Dubplates : de la musique propre à un seul sound system\n\nÀ l'origine, une dubplate était un disque en acétate spécial, produit en très petite quantité, voire en exemplaire unique. Un sound system pouvait ainsi détenir une version d'un morceau inaccessible à ses concurrents.\nChanteurs et deejays pouvaient également enregistrer des paroles personnalisées pour citer et vanter les mérites d'un sound system précis. Un air connu pouvait dès lors se transformer en une arme musicale exclusive. \nSi la réception de morceaux inédits par les DJ d'aujourd'hui présente des similitudes, la culture traditionnelle de la dubplate va plus loin, car l'enregistrement lui-même peut être personnalisé pour le sound system.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/distressed_reggae_vinyl_sound_system_collage.png",
+          "size": "medium",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "Sound Clash\n\nCompetition between sounds produced the sound clash: two or more systems facing one another through selection, exclusives, technical power, MC performance and crowd reaction.\nThe language can be theatrical and aggressive - 'kill the sound', 'murder the sound', 'burial' - but refers to musical competition. Clash culture became important in dancehall and influenced competitive traditions in jungle, grime and other scenes.\n\nThe crowd is not a passive consumer\n\nA conventional concert often suggests artist -> audience. A sound-system dance works more like selector <-> MC <-> engineer <-> records <-> system <-> crowd.\nAudience reaction changes the performance. When a tune creates an exceptional response, the selector may stop it and restart it: the rewind or pull-up. Linear playback is deliberately interrupted because the collective reaction has become more important than simply letting the record finish.\n\nThat practice remains immediately recognizable throughout UK bass culture.",
+            "fr": "Le Sound Clash\n\nLa compétition entre « sounds » (systèmes de diffusion sonore) a donné naissance au *sound clash* : deux systèmes ou plus s'affrontent à travers la sélection musicale, les morceaux exclusifs (*dubplates*), la puissance technique, la performance des MC et la réaction du public.\nLe langage employé peut être théâtral et agressif — « tuer le sound », « assassiner le sound », « enterrer » l'adversaire — mais il renvoie à une compétition musicale. La culture du *clash* a pris une place importante dans le *dancehall* et a influencé les traditions compétitives de la *jungle*, du *grime* et d'autres scènes.\n\nLe public n'est pas un consommateur passif\n\nUn concert classique repose souvent sur un schéma unidirectionnel : artiste vers public. Une soirée *sound system* fonctionne davantage selon une dynamique d'interaction : sélecteur <-> MC <-> ingénieur son <-> disques <-> système de diffusion <-> public.\nLa réaction du public modifie la performance. Lorsqu'un morceau suscite une réaction exceptionnelle, le sélecteur peut l'arrêter et le relancer : c'est ce qu'on appelle le *rewind* ou le *pull-up*. La lecture linéaire est délibérément interrompue car la réaction collective a pris le pas sur le simple fait de laisser le disque aller jusqu'au bout.\n\nCette pratique reste immédiatement reconnaissable au sein de la culture *Bass Music* britannique.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/07.jpg",
+          "size": "medium",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/09.jpg",
+          "size": "medium",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "Sound system as alternative public space\n\nSound systems developed strongly within working-class Jamaican communities. A yard, street, hall or open space could temporarily become a cultural centre.\nThis created a DIY infrastructure: build the speakers, find records, organize electricity, promote the dance and create your own audience. Sound-system history therefore cannot be separated from class, colonialism, race, migration and access to cultural institutions.\n\nPirate-radio mentality before pirate radio\n\nA central principle can be summarized as: if the official cultural infrastructure does not represent us, construct another one.\nSound systems supplied amplification. Independent labels supplied records. Dubplates supplied exclusive media. Record shops circulated music. Dances supplied venues. Selectors curated and MCs acted partly as broadcasters and commentators.\nThis decentralized ecosystem anticipates aspects of later pirate-radio culture, especially in Britain.",
+            "fr": "Le Sound System comme espace public alternatif\n\nLes sound systems se sont fortement développés au sein des communautés ouvrières jamaïcaines. Une cour, une rue, une salle ou un espace en plein air pouvait alors se transformer temporairement en centre culturel.\n\nCela a donné naissance à une infrastructure fondée sur le système D : fabriquer les enceintes, dénicher des disques, s'organiser pour l'électricité, promouvoir la soirée et fidéliser son propre public. L'histoire des sound systems est donc indissociable des questions de classe sociale, de colonialisme, de race, de migration et d'accès aux institutions culturelles.\n\nL'esprit « radio pirate » avant l'heure\n\nUn principe fondamental peut se résumer ainsi : si l'infrastructure culturelle officielle ne nous représente pas, il faut en bâtir une autre.\n\nLes sound systems assuraient l'amplification. Les labels indépendants fournissaient les disques. Les *dubplates* offraient des contenus exclusifs. Les disquaires diffusaient la musique. Les soirées offraient les lieux de rassemblement. Les *selectors* assuraient la programmation musicale, tandis que les MC jouaient en partie le rôle d'animateurs et de commentateurs.\n\nCet écosystème décentralisé préfigure certains aspects de la culture des radios pirates qui émergera plus tard, notamment en Grande-Bretagne.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/08.jpg",
+          "size": "medium",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "Jamaica -> Britain\n\nCaribbean migration carried sound-system culture to Britain after the Second World War. In a society where Black Caribbean communities faced racism, exclusion and hostility toward Black gatherings, sounds and blues dances became important community spaces.\nSound systems later became central to Notting Hill Carnival. British sounds developed their own identities, with figures such as Jah Shaka becoming legendary for heavyweight roots-and-dub sessions.\nFrom here the Jamaican tradition becomes deeply entangled with the history of British rave and bass music.\n\nReggae -> jungle -> garage -> grime -> dubstep\n\nThe influence is deeper than reggae samples.\n\nJungle and drum & bass inherited huge bass, MC/DJ interaction, dubplates, rewinds, sound-system-oriented production, dancehall vocals and competitive DJ culture.\nUK garage and speed garage inherited related practices through rave and jungle culture: sub-bass, dub effects, MCs, rewinds, VIP mixes and dramatic bass drops.\nGrime developed the crew, DJ, MC, pirate-radio, special/dubplate, clash and neighbourhood-identity logic in a new technological setting.\nEarly dubstep made the relationship especially obvious: enormous sub-bass, space as part of composition, dubplates, sparse arrangements and tracks designed specifically to be tested on powerful systems.\n\nThe bass itself has meaning\n\nIn sound-system culture, bass is musical, physical, technological and social. It is not merely a frequency range.\nA crowd experiences the same vibration simultaneously. The system moves air through bodies and through a shared space. This helps explain why sub-bass remains central to reggae, dub, jungle, garage, grime and dubstep.\n\nThe bass is part of the architecture of the gathering.",
+            "fr": "Jamaïque -> Grande-Bretagne\n\nL'immigration en provenance des Caraïbes a introduit la culture des *Sound Systems* en Grande-Bretagne après la Seconde Guerre mondiale. Dans une société où les communautés noires caribéennes étaient confrontées au racisme, à l'exclusion et à l'hostilité envers les rassemblements de Noirs, les *sound systems* et les soirées « blues » sont devenus des espaces communautaires essentiels.\n\nLes *sound systems* ont par la suite joué un rôle central dans le carnaval de Notting Hill. Les *sound systems* britanniques ont développé leur propre identité ; des figures comme Jah Shaka sont devenues légendaires grâce à leurs sessions « roots » et « dub » aux basses puissantes.\n\nC'est ainsi que la tradition jamaïcaine s'est intimement mêlée à l'histoire de la culture *Rave* et de la *Bass Music* britanniques.\n\nReggae -> jungle -> garage -> grime -> dubstep\n\nL'influence va bien au-delà des simples *samples* de reggae.\n\nLa Jungle et la *Drum & Bass* ont hérité de basses monumentales, de l'interaction entre MC et DJ, des *dubplates*, des *rewinds* (rembobinages), d'une production pensée pour les *sound systems*, de voix typiques du *dancehall* et d'une culture de la compétition entre DJ.\n\nLe UK garage et le *Speed Garage* ont hérité de pratiques similaires via la culture *Rave* et Jungle : *sub-bass* (infra basses très profondes), effets dub, MC, *rewinds*, *VIP mixes* et chutes de basse spectaculaires.\n\nLe Grime a développé la logique du collectif (*crew*), du DJ, du MC, de la radio pirate, de la *dubplate* exclusive (*special*), du *clash* et de l'identité de quartier, le tout dans un nouveau contexte technologique.\n\nLes débuts du Dubstep ont rendu ce lien particulièrement évident : *sub-bass* colossales, utilisation de l'espace dans la composition, *dubplates*, arrangements épurés et morceaux conçus spécifiquement pour être testés sur des systèmes de diffusion puissants.\n\nLa basse elle-même est porteuse de sens\n\nDans la culture des *sound systems*, la basse est à la fois musicale, physique, technologique et sociale. Elle ne se résume pas à une simple plage de fréquences.\nLa foule ressent la même vibration simultanément. Le système sonore déplace l'air à travers les corps et l'espace partagé. Cela explique en partie pourquoi les *sub-bass* restent au cœur du Reggae, du Dub, de la Jungle, du Garage, du Grime et du Dubstep.\n\nLa basse fait partie intégrante de l'architecture du rassemblement.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/sound_system_culture_timeline.jpg",
+          "size": "large",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "text",
+          "translations": {
+            "en": "Why it still matters\n\nWhen a contemporary producer uses huge sub-bass, strips an arrangement down before a bass return, throws a vocal into delay, makes alternate versions or VIPs, works with an MC, tests unreleased music on a large system, or structures a set around crowd-triggered rewinds, they are using ideas with deep connections to sound-system history.\nSound system culture is therefore not simply a historical chapter of reggae. It is one of the major foundations of modern bass-oriented popular music.",
+            "fr": "Pourquoi cela reste important\n\nLorsqu'un producteur contemporain utilise des sub-basses massives, épure un arrangement avant une remontée de basse, applique un effet de délai sur une voix, crée des versions alternatives ou des « VIP », collabore avec un MC, teste des morceaux inédits sur un gros système de diffusion ou structure un set autour de « rewinds » déclenchés par la réaction du public, il met en œuvre des idées profondément ancrées dans l'histoire des sound systems.\n\nLa culture sound system ne constitue donc pas un simple chapitre de l'histoire du reggae ; elle est l'un des piliers majeurs des musiques populaires modernes axées sur la basse.",
+            "es": ""
+          }
+        },
+        {
+          "type": "image",
+          "url": "media/soundsystem/10.jpg",
+          "size": "large",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          }
+        },
+        {
+          "type": "booklet",
+          "display": "grid",
+          "captions": {
+            "en": "",
+            "fr": "",
+            "es": ""
+          },
+          "pages": [
+            {
+              "url": "media/sound_system_culture_jamaica_to_dub.jpg",
+              "captions": {
+                "en": "",
+                "fr": "",
+                "es": ""
+              }
+            },
+            {
+              "url": "media/sound_system_culture_versions_and_bass.jpg",
+              "captions": {
+                "en": "",
+                "fr": "",
+                "es": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "2026-10-06-youtube-music-channels",
       "date": "2026-10-06",
