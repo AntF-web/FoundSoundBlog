@@ -58,6 +58,38 @@
   },
   "stories": [
     {
+  "id": "2026-10-22-let-fury-have-the-hour",
+  "date": "2026-10-22",
+  "artist": "Red Ant",
+  "location": "WWW",
+  "source": "Movie/Doc",
+  "url": "https://www.youtube.com/watch?v=E_MHZuQ3QBA",
+  "listenUrl": "",
+  "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTk3NTc4OTUwNF5BMl5BanBnXkFtZTcwNDYxNjk3OA@@._V1_.jpg",
+  "videoUrl": "",
+  "tags": [],
+  "translations": {
+    "en": {
+      "title": "Let Fury Have The Hour",
+      "summary": "Documentary about Music & Politics",
+      "note": ""
+    },
+    "es": {
+      "title": "Let Fury Have The Hour",
+      "summary": "Documental música y política",
+      "note": ""
+    },
+    "fr": {
+      "title": "Let Fury Have The Hour",
+      "summary": "Documentaire Musique & Politique",
+      "note": ""
+    }
+  },
+  "content": []
+},
+
+    
+    {
       "id": "2026-10-07-sound-system-culture",
       "date": "2026-10-07",
       "artist": "Red Ant",
