@@ -57,7 +57,7 @@
     }
   },
   "stories": [
-    {
+   {
   "id": "2026-10-22-let-fury-have-the-hour",
   "date": "2026-10-22",
   "artist": "Red Ant",
@@ -85,7 +85,44 @@
       "note": ""
     }
   },
-  "content": []
+  "content": [
+    {
+      "type": "image",
+      "url": "https://m.media-amazon.com/images/M/MV5BMTk3NTc4OTUwNF5BMl5BanBnXkFtZTcwNDYxNjk3OA@@._V1_.jpg",
+      "size": "large",
+      "captions": {
+        "en": "",
+        "fr": "",
+        "es": ""
+      }
+    },
+    {
+      "type": "text",
+      "translations": {
+        "en": "",
+        "fr": "",
+        "es": "If you are stuck at home and want to watch a great film, check out “Let Fury Have the Hour.” It is a few years old but incredibly relevant for the political and social turmoil we are experiencing now. Based on Antonino D’Ambrosio’s critically acclaimed book, the documentary “Let Fury Have the Hour” considers a range of increasingly pressing concerns, using the Clash’s legacy and, more importantly, the profound creative-activism of artists, musicians, and citizens throughout the world as a framework to address persistent issues- from poverty and racism to environmental devastation and war. The film offers insight from people who believe in the power of art and culture to tackle these issues, and who promote a worldview that is inclusive, expansive, and dynamic. Like The Clash and featured creative-activists, the film challenges its audience to make a difference, creates a new dialogue that moves beyond reactionary and simplistic politics, and inspires us to become part of a historical process of justice and change.  \nShepard Fairey"
+      }
+    },
+    {
+      "type": "video",
+      "url": "https://www.youtube.com/watch?v=E_MHZuQ3QBA",
+      "captions": {
+        "en": "",
+        "fr": "",
+        "es": ""
+      }
+    },
+    {
+      "type": "link",
+      "url": "https://monthlyreview.org/articles/let-fury-have-the-hour-the-passionate-politics-of-joe-strummer/",
+      "labels": {
+        "en": "",
+        "fr": "",
+        "es": ""
+      }
+    }
+  ]
 },
 
     
