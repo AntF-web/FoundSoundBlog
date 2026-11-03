@@ -8,9 +8,9 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 const supportedLanguages = ['en', 'es', 'fr'];
 const dateLocales = { en: 'en-GB', es: 'es-ES', fr: 'fr-FR' };
 const labels = {
-  en: { back: '← All stories', source: 'Read source ↗', listen: 'Listen ↗', video: 'Open video ↗', pdfOpen: 'Open PDF ↗', pdfDownload: 'Download PDF', bookletPrev: '← Previous', bookletNext: 'Next →', page: 'Page', footer: 'Independent notes for curious ears.', missing: 'Article not found.' },
-  es: { back: '← Todas las historias', source: 'Leer fuente ↗', listen: 'Escuchar ↗', video: 'Abrir vídeo ↗', pdfOpen: 'Abrir PDF ↗', pdfDownload: 'Descargar PDF', bookletPrev: '← Anterior', bookletNext: 'Siguiente →', page: 'Página', footer: 'Notas independientes para oídos curiosos.', missing: 'Artículo no encontrado.' },
-  fr: { back: '← Toutes les histoires', source: 'Lire la source ↗', listen: 'Écouter ↗', video: 'Ouvrir la vidéo ↗', pdfOpen: 'Ouvrir le PDF ↗', pdfDownload: 'Télécharger le PDF', bookletPrev: '← Précédente', bookletNext: 'Suivante →', page: 'Page', footer: 'Notes indépendantes pour oreilles curieuses.', missing: 'Article introuvable.' }
+  en: { back: '← All stories', source: 'Read source ↗', listen: 'Listen ↗', video: 'Open video ↗', watchYoutube: 'Watch on YouTube ↗', videoUnavailable: 'This video cannot be played inside the article.', pdfOpen: 'Open PDF ↗', pdfDownload: 'Download PDF', bookletPrev: '← Previous', bookletNext: 'Next →', page: 'Page', footer: 'Independent notes for curious ears.', missing: 'Article not found.' },
+  es: { back: '← Todas las historias', source: 'Leer fuente ↗', listen: 'Escuchar ↗', video: 'Abrir vídeo ↗', watchYoutube: 'Ver en YouTube ↗', videoUnavailable: 'Este vídeo no se puede reproducir dentro del artículo.', pdfOpen: 'Abrir PDF ↗', pdfDownload: 'Descargar PDF', bookletPrev: '← Anterior', bookletNext: 'Siguiente →', page: 'Página', footer: 'Notas independientes para oídos curiosos.', missing: 'Artículo no encontrado.' },
+  fr: { back: '← Toutes les histoires', source: 'Lire la source ↗', listen: 'Écouter ↗', video: 'Ouvrir la vidéo ↗', watchYoutube: 'Voir sur YouTube ↗', videoUnavailable: 'Cette vidéo ne peut pas être lue directement dans l’article.', pdfOpen: 'Ouvrir le PDF ↗', pdfDownload: 'Télécharger le PDF', bookletPrev: '← Précédente', bookletNext: 'Suivante →', page: 'Page', footer: 'Notes indépendantes pour oreilles curieuses.', missing: 'Article introuvable.' }
 };
 
 let story = null;
@@ -71,27 +71,170 @@ function articleLinkAttrs(url) {
     return resolved.origin === window.location.origin ? '' : ' target="_blank" rel="noopener noreferrer"';
   } catch { return ' target="_blank" rel="noopener noreferrer"'; }
 }
-function inlineLinks(value = '') {
+function inlineMarkup(value = '') {
   const text = String(value);
-  const pattern = /\[([^\]\n]+)\]\(([^)\s]+)\)/g;
+  const pattern = /\[([^\]\n]+)\]\(([^)\s]+)\)|`([^`\n]+)`|\*\*([^*\n]+)\*\*|\*([^*\n]+)\*/g;
   let html = ''; let lastIndex = 0; let match;
   while ((match = pattern.exec(text))) {
     html += escapeHTML(text.slice(lastIndex, match.index));
-    const href = safeArticleLink(match[2]);
-    if (href) html += `<a class="article-inline-link" href="${escapeHTML(href)}"${articleLinkAttrs(href)}>${escapeHTML(match[1])}</a>`;
-    else html += escapeHTML(match[0]);
+    if (match[1] !== undefined) {
+      const href = safeArticleLink(match[2]);
+      html += href ? `<a class="article-inline-link" href="${escapeHTML(href)}"${articleLinkAttrs(href)}>${escapeHTML(match[1])}</a>` : escapeHTML(match[0]);
+    } else if (match[3] !== undefined) html += `<code class="article-inline-code">${escapeHTML(match[3])}</code>`;
+    else if (match[4] !== undefined) html += `<strong>${escapeHTML(match[4])}</strong>`;
+    else if (match[5] !== undefined) html += `<em>${escapeHTML(match[5])}</em>`;
     lastIndex = pattern.lastIndex;
   }
   html += escapeHTML(text.slice(lastIndex));
   return html;
 }
 function paragraphs(value = '') {
-  return String(value).trim().split(/\n\s*\n/).filter(Boolean).map(paragraph => `<p>${inlineLinks(paragraph).replace(/\n/g, '<br>')}</p>`).join('');
+  const lines = String(value).replace(/\r/g, '').trim().split('\n');
+  const html = [];
+  let paragraph = [];
+  let listType = '';
+  let listItems = [];
+  let quoteLines = [];
+  const flushParagraph = () => { if (paragraph.length) { html.push(`<p>${inlineMarkup(paragraph.join('\n')).replace(/\n/g, '<br>')}</p>`); paragraph = []; } };
+  const flushList = () => { if (listItems.length) { html.push(`<${listType}>${listItems.map(item => `<li>${inlineMarkup(item)}</li>`).join('')}</${listType}>`); listItems = []; listType = ''; } };
+  const flushQuote = () => { if (quoteLines.length) { html.push(`<blockquote>${quoteLines.map(line => `<p>${inlineMarkup(line)}</p>`).join('')}</blockquote>`); quoteLines = []; } };
+  const flushAll = () => { flushParagraph(); flushList(); flushQuote(); };
+  for (const rawLine of lines) {
+    const line = rawLine.trimEnd();
+    if (!line.trim()) { flushAll(); continue; }
+    const heading = line.match(/^(#{1,4})\s+(.+)$/);
+    if (heading) {
+      flushAll();
+      const level = Math.min(5, heading[1].length + 1);
+      html.push(`<h${level}>${inlineMarkup(heading[2].trim())}</h${level}>`);
+      continue;
+    }
+    const unordered = line.match(/^[-+*]\s+(.+)$/);
+    if (unordered) {
+      flushParagraph(); flushQuote();
+      if (listType && listType !== 'ul') flushList();
+      listType = 'ul'; listItems.push(unordered[1]);
+      continue;
+    }
+    const ordered = line.match(/^\d+\.\s+(.+)$/);
+    if (ordered) {
+      flushParagraph(); flushQuote();
+      if (listType && listType !== 'ol') flushList();
+      listType = 'ol'; listItems.push(ordered[1]);
+      continue;
+    }
+    const quote = line.match(/^>\s?(.*)$/);
+    if (quote) {
+      flushParagraph(); flushList(); quoteLines.push(quote[1]); continue;
+    }
+    flushList(); flushQuote(); paragraph.push(line);
+  }
+  flushAll();
+  return html.join('');
 }
+let youtubePlayerSerial = 0;
+let youtubeApiPromise = null;
+
+function youtubeFallbackMarkup(videoId, originalUrl, title = '') {
+  const href = safeArticleLink(originalUrl) || `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
+  const thumb = `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg`;
+  return `<div class="youtube-video-fallback">
+    <a class="youtube-video-fallback__visual" href="${escapeHTML(href)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(labels[currentLanguage].watchYoutube)}">
+      <img src="${escapeHTML(thumb)}" alt="${escapeHTML(title || 'YouTube video')}" loading="lazy" />
+      <span class="youtube-video-fallback__play" aria-hidden="true">▶</span>
+    </a>
+    <div class="youtube-video-fallback__body">
+      <p>${escapeHTML(labels[currentLanguage].videoUnavailable)}</p>
+      <a class="action-link" href="${escapeHTML(href)}" target="_blank" rel="noopener noreferrer">${escapeHTML(labels[currentLanguage].watchYoutube)}</a>
+    </div>
+  </div>`;
+}
+
+function replaceYouTubeWithFallback(shell) {
+  if (!shell || shell.dataset.fallbackApplied === 'true') return;
+  shell.dataset.fallbackApplied = 'true';
+  const videoId = shell.dataset.youtubeId || '';
+  const originalUrl = shell.dataset.youtubeUrl || '';
+  const title = shell.dataset.youtubeTitle || '';
+  shell.classList.add('article-video-frame--fallback');
+  shell.innerHTML = youtubeFallbackMarkup(videoId, originalUrl, title);
+}
+
+function ensureYouTubeApi() {
+  if (window.YT && typeof window.YT.Player === 'function') return Promise.resolve(window.YT);
+  if (youtubeApiPromise) return youtubeApiPromise;
+  youtubeApiPromise = new Promise((resolve, reject) => {
+    const previousReady = window.onYouTubeIframeAPIReady;
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      if (window.YT && typeof window.YT.Player === 'function') resolve(window.YT);
+      else reject(new Error('YouTube player API unavailable'));
+    };
+    window.onYouTubeIframeAPIReady = () => {
+      if (typeof previousReady === 'function') {
+        try { previousReady(); } catch {}
+      }
+      finish();
+    };
+    if (!document.querySelector('script[data-found-sound-youtube-api]')) {
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      script.async = true;
+      script.dataset.foundSoundYoutubeApi = 'true';
+      script.onerror = () => reject(new Error('YouTube player API failed to load'));
+      document.head.appendChild(script);
+    }
+    window.setTimeout(() => {
+      if (!settled && window.YT && typeof window.YT.Player === 'function') finish();
+      else if (!settled) reject(new Error('YouTube player API timeout'));
+    }, 9000);
+  }).catch(error => {
+    youtubeApiPromise = null;
+    throw error;
+  });
+  return youtubeApiPromise;
+}
+
+function initYouTubePlayers(container = document) {
+  const shells = [...container.querySelectorAll('.youtube-player-shell:not([data-youtube-ready])')];
+  if (!shells.length) return;
+  ensureYouTubeApi().then(() => {
+    shells.forEach(shell => {
+      if (!shell.isConnected || shell.dataset.youtubeReady === 'true') return;
+      shell.dataset.youtubeReady = 'true';
+      const target = shell.querySelector('.youtube-player-target');
+      const videoId = shell.dataset.youtubeId || '';
+      if (!target || !videoId) { replaceYouTubeWithFallback(shell); return; }
+      try {
+        new window.YT.Player(target.id, {
+          videoId,
+          host: 'https://www.youtube-nocookie.com',
+          playerVars: {
+            rel: 0,
+            playsinline: 1,
+            origin: window.location.origin
+          },
+          events: {
+            onError: event => {
+              // 2 invalid ID, 5 HTML5 error, 100 removed/private,
+              // 101/150 embedding disabled, 153 missing/invalid client identity.
+              if ([2, 5, 100, 101, 150, 153].includes(Number(event.data))) replaceYouTubeWithFallback(shell);
+            }
+          }
+        });
+      } catch {
+        replaceYouTubeWithFallback(shell);
+      }
+    });
+  }).catch(() => shells.forEach(replaceYouTubeWithFallback));
+}
+
 function renderVideo(url, title) {
   const mediaUrl = safeMediaUrl(url); if (!mediaUrl) return '';
   const yt = getYouTubeId(mediaUrl); const vm = getVimeoId(mediaUrl);
-  if (yt) return `<div class="article-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(yt)}" title="${escapeHTML(title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;
+  if (yt) { const playerId = `found-sound-yt-${++youtubePlayerSerial}`; return `<div class="article-video-frame youtube-player-shell" data-youtube-id="${escapeHTML(yt)}" data-youtube-url="${escapeHTML(mediaUrl)}" data-youtube-title="${escapeHTML(title)}"><div class="youtube-player-target" id="${playerId}"></div></div>`; }
   if (vm) return `<div class="article-video-frame"><iframe src="https://player.vimeo.com/video/${encodeURIComponent(vm)}" title="${escapeHTML(title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>`;
   if (/\.(mp4|webm|ogg)(?:[?#].*)?$/i.test(mediaUrl)) return `<div class="article-video-frame"><video src="${escapeHTML(mediaUrl)}" controls preload="metadata" playsinline></video></div>`;
   return `<div class="article-empty-video"><a class="action-link" href="${escapeHTML(mediaUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(labels[currentLanguage].video)}</a></div>`;
@@ -173,6 +316,7 @@ function render() {
         </div>
       </div>
     </article>`;
+  initYouTubePlayers(root);
 }
 
 root.addEventListener('click', event => {
