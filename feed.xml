@@ -1,25 +1,91 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>FOUND / SOUND</title>
-    <link>https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/</link>
+    <link>https://blog.antzone.be/</link>
     <description>Independent music notes, stories and discoveries.</description>
     <language>en</language>
-    <atom:link href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.antzone.be/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Nov 2026 11:52:36 GMT</lastBuildDate>
+    <item>
+      <title>PLEASE DON’T FEED THE SAMPLER</title>
+      <link>https://blog.antzone.be/2026-11-18-please-don-t-feed-the-sampler.html</link>
+      <guid isPermaLink="true">https://blog.antzone.be/2026-11-18-please-don-t-feed-the-sampler.html</guid>
+      <pubDate>Wed, 18 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Imagine telling a drummer in 1969 that a few seconds of his playing would help furnish the future.</description>
+    </item>
+    <item>
+      <title>Ghosts of my Life</title>
+      <link>https://blog.antzone.be/2026-11-02-ghosts-of-my-life.html</link>
+      <guid isPermaLink="true">https://blog.antzone.be/2026-11-02-ghosts-of-my-life.html</guid>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Halloween has barely ended, yet some ghosts do not vanish along with the decorations. They linger in records, films, cities, and memories—and, above all, in the futures we were promised that never came to pass.
+
+The disappearance of Juan Atkins—one of the architects of Detroit techno—on October 31, 2026, lends a particular resonance to these ghosts today. His music embodied precisely what Mark Fisher constantly explored: the capacity of popular culture to imagine other worlds. *Ghosts of My Life* speaks to these traces, these lost possibilities, and the ways in which they continue to haunt our present.</description>
+      <category>halloween</category>
+      <category>ghosts</category>
+      <category>fisher</category>
+      <category>hantologie</category>
+      <category>futurs-perdus</category>
+      <category>capitalism-realism</category>
+      <category>k-punk</category>
+    </item>
+    <item>
+      <title>Let Fury Have The Hour</title>
+      <link>https://blog.antzone.be/2026-10-22-let-fury-have-the-hour.html</link>
+      <guid isPermaLink="true">https://blog.antzone.be/2026-10-22-let-fury-have-the-hour.html</guid>
+      <pubDate>Thu, 22 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Documentary about Music &amp; Politics</description>
+    </item>
+    <item>
+      <title>Sound System Culture</title>
+      <link>https://blog.antzone.be/2026-10-07-sound-system-culture.html</link>
+      <guid isPermaLink="true">https://blog.antzone.be/2026-10-07-sound-system-culture.html</guid>
+      <pubDate>Wed, 07 Oct 2026 12:00:00 GMT</pubDate>
+      <description>From Jamaican yard dances to Dub, Hip-Hop and UK Bass music</description>
+      <category>reggae</category>
+      <category>sound-system</category>
+      <category>jamaica</category>
+    </item>
+    <item>
+      <title>YouTube Music Channels</title>
+      <link>https://blog.antzone.be/2026-10-06-youtube-music-channels.html</link>
+      <guid isPermaLink="true">https://blog.antzone.be/2026-10-06-youtube-music-channels.html</guid>
+      <pubDate>Tue, 06 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Some YouTube music channels worth a listen. New releases updated daily in UK Bass Music (all genres).</description>
+      <category>ukgarage</category>
+      <category>ukfunky</category>
+      <category>speedgarage</category>
+      <category>dub</category>
+      <category>bassmusic</category>
+      <category>grime</category>
+      <category>music</category>
+    </item>
+    <item>
+      <title>Musicmap</title>
+      <link>https://blog.antzone.be/2026-10-02-musicmap.html</link>
+      <guid isPermaLink="true">https://blog.antzone.be/2026-10-02-musicmap.html</guid>
+      <pubDate>Fri, 02 Oct 2026 12:00:00 GMT</pubDate>
+      <description>The Genealogy and History of Popular Music Genres from Origin till Present (1870-201..)</description>
+      <category>music</category>
+      <category>map</category>
+    </item>
     <item>
       <title>Music Story</title>
-      <link>https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/article.html?id=2026-10-02-music-story</link>
-      <guid isPermaLink="true">https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/article.html?id=2026-10-02-music-story</guid>
+      <link>https://blog.antzone.be/2026-10-02-music-story.html</link>
+      <guid isPermaLink="true">https://blog.antzone.be/2026-10-02-music-story.html</guid>
       <pubDate>Fri, 02 Oct 2026 12:00:00 GMT</pubDate>
-      <description>Not a history of music. A life through music — records, pirate frequencies, television shocks, bass pressure, breakbeats and images that never left.</description>\n      <category>music</category>
+      <description>Not a history of music. A life through music — records, pirate frequencies, television shocks, bass pressure, breakbeats and images that never left.</description>
+      <category>music</category>
     </item>
     <item>
       <title>Introduction - My Music History</title>
-      <link>https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/article.html?id=2026-10-01-introduction-my-music-history</link>
-      <guid isPermaLink="true">https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/article.html?id=2026-10-01-introduction-my-music-history</guid>
+      <link>https://blog.antzone.be/2026-10-01-introduction-my-music-history.html</link>
+      <guid isPermaLink="true">https://blog.antzone.be/2026-10-01-introduction-my-music-history.html</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <description>First post to introduce myself.  Musician, DJ, artivist, digger,...
-This blog is intended to share my wanderings on the internet, the vibrations in my headphones and the thoughts coming from my mind.</description>\n      <category>introduction</category>
+This blog is intended to share my wanderings on the internet, the vibrations in my headphones and the thoughts coming from my mind.</description>
+      <category>introduction</category>
       <category>ukgarage</category>
       <category>ukfunky</category>
       <category>speedgarage</category>
