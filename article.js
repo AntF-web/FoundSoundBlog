@@ -88,6 +88,71 @@ function inlineMarkup(value = '') {
   html += escapeHTML(text.slice(lastIndex));
   return html;
 }
+// Markdown table cells are still passed through the existing safe inline renderer.
+function tableCells(line) {
+  const text = line.trim();
+  if (!text.startsWith('|')) return null;
+  const cells = []; let cell = ''; let escaped = false;
+  for (let i = 1; i < text.length; i++) {
+    const ch = text[i];
+    if (escaped) { cell += ch; escaped = false; }
+    else if (ch === '\\') escaped = true;
+    else if (ch === '|') { cells.push(cell.trim()); cell = ''; }
+    else cell += ch;
+  }
+  if (escaped) cell += '\\';
+  if (!text.endsWith('|') || cell.trim()) cells.push(cell.trim());
+  return cells;
+}
+function tableSeparator(line, width) {
+  const cells = tableCells(line || '');
+  return cells && cells.length === width && cells.every(cell => /^:?-{3,}:?$/.test(cell));
+}
+function renderMarkdownTable(rows) {
+  const width = rows[0].length;
+  const cellHTML = text => String(text || '').split(/<br\s*\/?\s*>/i).map(inlineMarkup).join('<br>');
+  const rowHTML = (row, header) => '<tr>' + Array.from({length: width}, (_, i) => header
+    ? `<th scope="col">${cellHTML(row[i])}</th>` : `<td>${cellHTML(row[i])}</td>`).join('') + '</tr>';
+  return `<div class="article-table-scroll" tabindex="0" role="region" aria-label="${({en:'Table',fr:'Tableau',es:'Tabla'})[currentLanguage] || 'Table'}"><table class="article-table"><thead>${rowHTML(rows[0], true)}</thead><tbody>${rows.slice(1).map(row => rowHTML(row, false)).join('')}</tbody></table></div>`;
+}
+function activateSourceReferences(container) {
+  const sources = new Map();
+  let inSources = false;
+  for (const element of container.querySelectorAll('.article-text h2, .article-text h3, .article-text h4, .article-text h5, .article-text p')) {
+    if (/^H/.test(element.tagName)) {
+      inSources = /^(?:sources(?:\s|$)|fuentes(?:\s|$)|references(?:\s|$)|références(?:\s|$))/i.test(element.textContent.trim());
+      continue;
+    }
+    const match = inSources && element.textContent.match(/^\s*\[(\d+)\]/);
+    if (match && !sources.has(match[1])) {
+      element.id = `source-${match[1]}`;
+      element.tabIndex = -1;
+      element.style.scrollMarginTop = '6rem';
+      sources.set(match[1], element);
+    }
+  }
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  for (const node of nodes) {
+    if (!node.parentElement.closest('.article-text') || node.parentElement.closest('a, code, pre, [id^="source-"]')) continue;
+    const expression = /\[(\d+)\]/g;
+    let match, start = 0;
+    const fragment = document.createDocumentFragment();
+    while ((match = expression.exec(node.nodeValue))) {
+      if (!sources.has(match[1])) continue;
+      fragment.append(document.createTextNode(node.nodeValue.slice(start, match.index)));
+      const link = document.createElement('a');
+      link.href = `#source-${match[1]}`;
+      link.className = 'article-inline-link article-reference';
+      link.textContent = match[0];
+      link.setAttribute('aria-label', `${({en:'Source',fr:'Source',es:'Fuente'})[currentLanguage] || 'Source'} ${match[1]}`);
+      fragment.append(link);
+      start = expression.lastIndex;
+    }
+    if (start) { fragment.append(document.createTextNode(node.nodeValue.slice(start))); node.replaceWith(fragment); }
+  }
+}
 function paragraphs(value = '') {
   const lines = String(value).replace(/\r/g, '').trim().split('\n');
   const html = [];
@@ -99,9 +164,23 @@ function paragraphs(value = '') {
   const flushList = () => { if (listItems.length) { html.push(`<${listType}>${listItems.map(item => `<li>${inlineMarkup(item)}</li>`).join('')}</${listType}>`); listItems = []; listType = ''; } };
   const flushQuote = () => { if (quoteLines.length) { html.push(`<blockquote>${quoteLines.map(line => `<p>${inlineMarkup(line)}</p>`).join('')}</blockquote>`); quoteLines = []; } };
   const flushAll = () => { flushParagraph(); flushList(); flushQuote(); };
-  for (const rawLine of lines) {
+  for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
+    const rawLine = lines[lineIndex];
     const line = rawLine.trimEnd();
     if (!line.trim()) { flushAll(); continue; }
+    const headerCells = tableCells(line);
+    if (headerCells?.length && tableSeparator(lines[lineIndex + 1], headerCells.length)) {
+      flushAll();
+      const rows = [headerCells];
+      lineIndex += 1;
+      while (lineIndex + 1 < lines.length) {
+        const cells = tableCells(lines[lineIndex + 1]);
+        if (!cells || cells.length !== headerCells.length) break;
+        rows.push(cells); lineIndex += 1;
+      }
+      html.push(renderMarkdownTable(rows));
+      continue;
+    }
     const heading = line.match(/^(#{1,4})\s+(.+)$/);
     if (heading) {
       flushAll();
@@ -316,6 +395,7 @@ function render() {
         </div>
       </div>
     </article>`;
+  activateSourceReferences(root);
   initYouTubePlayers(root);
 }
 
